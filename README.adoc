@@ -1,9 +1,22 @@
+## Personal Annotations
+
+- Utilizada a lib SpringBatch
+- Criar ItemProcessor para tratar os dados (Conversão para UpperCase neste caso), input e output.
+- Criar uma classe @configuration com as beans:
+  - Reader
+  - Processor
+  - Writter
+- Criar beans de configuração das Jobs:
+  - Job (JobRepository, step1, JobCompletionNotificationListener)
+  - Step1 (JobRepository, transactionManager, reader, processor, writer)
+Criar classe JobCompletationNotificationListener
+  - afterJob: configura o que será executado após o processo batch.
+- SpringApplication.exit(): Garante que a aplicação seja terminada na JVM após sua execução.
+
 :toc:
 :icons: font
 :source-highlighter: prettify
 :project_id: gs-batch-processing
-
-This guide walks you through the process of creating a basic batch-driven solution.
 
 == What You Will build
 
